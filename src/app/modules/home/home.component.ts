@@ -1,3 +1,4 @@
+import { GeolocationService } from './../../common/services/geolocation.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  public constructor() { }
+  public constructor(private geolocation: GeolocationService) { }
 
   public ngOnInit(): void {
+    this.getCurrentPosition();
+  }
+
+  getCurrentPosition(): void {
+    this.geolocation.getCurrentLocation().then(resp => {
+      console.log(resp.lat, resp.lng);
+    });
   }
 
 }

@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+// Font weight
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+
+$font-color: #FFFF;
+
+.container-home {
+  padding: 0 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .first-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 260px;
+
+    .top {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .description {
+        width: 300px;
+
+        h3 {
+          color: $font-color;
+          font-family: 'Quicksand', sans-serif;
+        }
+
+        p {
+          margin-top: 30px;
+          color: $font-color;
+          font-family: 'Quicksand', sans-serif;
+          line-height: 23px;
+        }
+      }
+
+      .image {
+        width: 400px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      flex-wrap: wrap;
+      margin-top: 140px;
+
+      .box1 {
+        width: 300px;
+        min-width: 250px;
+        height: 200px;
+        min-height: 100px;
+        background: url("../../../assets/img/ford-mustang.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 10px;
+      }
+
+      .box2 {
+        width: 300px;
+        min-width: 250px;
+        height: 200px;
+        min-height: 100px;
+        background: url("../../../assets/img/boat.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 10px;
+      }
+
+      .box3 {
+        width: 300px;
+        min-width: 250px;
+        height: 200px;
+        min-height: 100px;
+        background: url("../../../assets/img/motorcycle.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 10px;
+      }
+
+      .box4 {
+        width: 300px;
+        min-width: 250px;
+        height: 200px;
+        min-height: 100px;
+        background: url("../../../assets/img/van.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 940px) {
+  .container-home {
+    padding: 0 40px;
+    .first-section {
+      .bottom {
+        justify-content: center;
+      }
+    }
+  }
+}
