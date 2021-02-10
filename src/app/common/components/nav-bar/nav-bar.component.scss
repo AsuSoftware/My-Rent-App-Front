@@ -1,6 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+// Font weight
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+
+$font-color: #ffff;
+
 // Background colors
 $background: #426e6e;
-$backgroundIcon: #184d47;
+$greenDark: #184d47;
 
 // Border color
 $borderIconActive: #ccdcdc;
@@ -15,6 +26,12 @@ $greenLight: #717171;
   padding: 15px 140px;
   align-items: center;
   background-color: $background;
+
+  .menu-btn {
+    display: none;
+    width: 30px;
+    height: 22px;
+  }
 
   .logo {
     width: 125px;
@@ -38,7 +55,7 @@ $greenLight: #717171;
         text-decoration: none;
         font-size: 23px;
         color: white;
-        background: #184d47;
+        background: $greenDark;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -87,11 +104,139 @@ $greenLight: #717171;
       }
     }
   }
+
+  .container-links-mobile {
+    display: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .close {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 23px;
+      margin: 30px 30px 0 0;
+      color: $font-color;
+      cursor: pointer;
+    }
+
+    h3 {
+      text-align: center;
+      margin: 20px;
+      font-size: 25px;
+      color: $font-color;
+      font-family: "Quicksand", sans-serif;
+      font-weight: $medium;
+    }
+
+    .links-mobile {
+      transform: translate(0, 10%);
+
+      li {
+        margin: 25px 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .link {
+          text-decoration: none;
+          font-size: 23px;
+          color: white;
+          background: $greenDark;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 45px;
+          width: 45px;
+          border: 2px solid transparent;
+          transition: 0.5s linear;
+        }
+
+        .link:hover {
+          border-color: $borderIconActive;
+        }
+
+        .active {
+          border-color: $borderIconActive;
+        }
+
+        .signIn {
+          text-decoration: none;
+          color: $greenLight;
+          background: $sandyYellow;
+          padding: 13px 30px;
+          border-radius: 20px;
+        }
+
+        .logIn {
+          text-decoration: none;
+          border: 2px solid $sandyYellow;
+          color: white;
+          padding: 13px 30px;
+          border-radius: 20px;
+        }
+      }
+    }
+  }
+  .user-profile {
+    display: none;
+    width: 40px;
+    height: 40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
 }
 
+@media only screen and (max-width: 600px) {
+  .container-nav {
+    padding: 20px 20px !important;
 
-@media only screen and (max-width: 940px) {
+    .container-links-mobile {
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
   .container-nav {
     padding: 15px 40px;
+
+    .menu-btn {
+      display: block;
+    }
+
+    .links {
+      display: none;
+    }
+
+    .container-links-mobile {
+      display: flex;
+      position: fixed;
+      top: 0%;
+      flex-direction: column;
+      width: 40%;
+      height: 100%;
+      left: 0;
+      background: $greenDark;
+    }
+
+    .user-profile {
+      display: flex;
+    }
+
+    .container-user-action {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .container-nav {
+    padding: 15px 50px;
   }
 }

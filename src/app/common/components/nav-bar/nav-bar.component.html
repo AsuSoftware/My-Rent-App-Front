@@ -1,4 +1,5 @@
 <div class="container-nav">
+  <img class="menu-btn" src="./assets/img/btn-menu.png" alt="menu btn" (click)="onNavOpen()">
   <div class="logo">
     <img src="./assets/img/logo.png" alt="logo my rent app">
   </div>
@@ -13,4 +14,22 @@
     <li><a class="signIn" routerLink="/">Sign In</a></li>
     <li><a class="logIn" routerLink="/">Log In</a></li>
   </ul>
+
+  <div class="container-links-mobile" [@openClose]="isNavOpened ? 'open' : 'closed'">
+    <i class="fas fa-times close" (click)="onNavClose()"></i>
+    <h3>Welcome</h3>
+    <ul class="links-mobile">
+      <li><a class="link" routerLink="/" routerLinkActive="active"><i class="fas fa-home"></i></a></li>
+      <li><a class="link" routerLink="/vehicles" routerLinkActive="active"><i class="fas fa-car-building"></i></a></li>
+      <li><a class="link" routerLink="/postRent" routerLinkActive="active"><i class="fas fa-garage-car"></i></a></li>
+      <li><a class="link" routerLink="/messages" routerLinkActive="active"><i class="fas fa-comment"></i></a></li>
+      <li><a class="link" routerLink="/notification" routerLinkActive="active"><i class="fas fa-bell"></i></a></li>
+      <li><a class="signIn" routerLink="/">Sign In</a></li>
+      <li><a class="logIn" routerLink="/">Log In</a></li>
+    </ul>
+  </div>
+
+  <div class="user-profile">
+    <img src="./assets/img/girl-image.jpg" alt="user profile image">
+  </div>
 </div>

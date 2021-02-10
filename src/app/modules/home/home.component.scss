@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 // Font weight
 $light: 300;
@@ -7,7 +7,7 @@ $medium: 500;
 $semiBold: 600;
 $bold: 700;
 
-$font-color: #FFFF;
+$font-color: #ffff;
 
 .container-home {
   padding: 0 140px;
@@ -33,13 +33,13 @@ $font-color: #FFFF;
 
         h3 {
           color: $font-color;
-          font-family: 'Quicksand', sans-serif;
+          font-family: "Quicksand", sans-serif;
         }
 
         p {
           margin-top: 30px;
           color: $font-color;
-          font-family: 'Quicksand', sans-serif;
+          font-family: "Quicksand", sans-serif;
           line-height: 23px;
         }
       }
@@ -109,16 +109,112 @@ $font-color: #FFFF;
       }
     }
   }
+  .second-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 260px;
+    flex-wrap: wrap-reverse;
+
+    .map {
+      max-width: 300px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .description {
+      width: 300px;
+
+      h3 {
+        color: $font-color;
+        font-family: "Quicksand", sans-serif;
+      }
+
+      p {
+        margin-top: 30px;
+        color: $font-color;
+        font-family: "Quicksand", sans-serif;
+        line-height: 23px;
+      }
+    }
+  }
 }
 
-
-@media only screen and (max-width: 940px) {
+@media only screen and (max-width: 600px) {
   .container-home {
-    padding: 0 40px;
+    padding: 0 15px !important;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .container-home {
+    .first-section {
+      margin-top: 100px;
+      .top {
+        flex-direction: column;
+        align-items: center;
+        .description {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          h3 {
+            text-align: center;
+          }
+          p {
+            width: 80%;
+          }
+        }
+        .image {
+          width: 250px;
+          margin-top: 60px;
+        }
+      }
+      .bottom {
+        margin-top: 100px;
+      }
+    }
+    .second-section {
+      flex-direction: column-reverse;
+      justify-content: center;
+      margin-top: 100px;
+      .map {
+        margin-top: 60px;
+      }
+      .description {
+        width: 80%;
+        h3 {
+          text-align: center;
+        }
+        p {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container-home {
     .first-section {
       .bottom {
         justify-content: center;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .container-home {
+    padding: 0 40px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .container-home {
+    padding: 0 50px;
   }
 }
