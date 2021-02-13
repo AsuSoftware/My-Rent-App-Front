@@ -61,10 +61,14 @@ $red: #ff0000;
     }
   }
   .about-us-section {
+    margin-top: 320px;
+    padding: 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     .container-box {
       display: flex;
       align-items: center;
-      padding: 320px 100px;
       .box {
         background: $blueMedium;
         display: flex;
@@ -155,6 +159,123 @@ $red: #ff0000;
       }
       .box:not(:last-child) {
         margin-right: 90px;
+      }
+    }
+    .description {
+      width: 356px;
+      h2 {
+        margin-bottom: 46px;
+        font-size: 32px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $bold;
+      }
+      p {
+        line-height: 25px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+      }
+    }
+  }
+  .payment-section {
+    margin-top: 320px;
+    padding: 100px 100px;
+    background: $blueMediumDark;
+    .title {
+      font-size: 32px;
+      font-family: "Quicksand", sans-serif;
+      font-weight: $bold;
+      text-align: center;
+      color: $white;
+    }
+    .container-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .image {
+        width: 300px;
+        img {
+          width: 100%;
+        }
+      }
+      .description {
+        width: 356px;
+        p {
+          font-family: "Quicksand", sans-serif;
+          font-weight: $regular;
+          font-size: 16px;
+          color: $white;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+  .location-section {
+    margin-top: 320px;
+    padding: 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .description {
+      width: 356px;
+      h2 {
+        margin-bottom: 46px;
+        font-size: 32px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $bold;
+      }
+      p {
+        line-height: 25px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+      }
+    }
+    .image {
+      width: 400px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .money-section {
+    margin-top: 320px;
+    padding: 100px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .description {
+      width: 356px;
+      h2 {
+        margin-bottom: 46px;
+        font-size: 32px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $bold;
+      }
+      p {
+        line-height: 25px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+      }
+      .post-btn {
+        border: 0;
+        background: $blueMediumDark;
+        opacity: 0.8;
+        padding: 15px 20px;
+        border-radius: 7px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+        color: $white;
+        margin-top: 46px;
+        cursor: pointer;
+      }
+    }
+    .image {
+      width: 400px;
+      img {
+        width: 100%;
       }
     }
   }
