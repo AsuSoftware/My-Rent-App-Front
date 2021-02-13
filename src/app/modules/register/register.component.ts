@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     email: [null, [Validators.required, Validators.email]],
     birthday: [null, Validators.required],
     phone: [null, Validators.required],
-    password: [null, Validators.required],
+    password: [null, [Validators.required, Validators.minLength(8)]],
     address: this.fb.group({
       city: [null, Validators.required],
       country: [null, Validators.required],
@@ -27,10 +27,11 @@ export class RegisterComponent implements OnInit {
 
   public constructor(private fb: FormBuilder) { }
 
-  public ngOnInit(): void {
-  }
+  public ngOnInit(): void {}
 
   public getAddressForm(): void {
+    console.log(this.profileForm.get('address'));
+    console.log("A intrat");
     if(this.profileForm.get('firstName').valid &&
      this.profileForm.get('lastName').valid &&
      this.profileForm.get('email').valid &&
@@ -38,7 +39,10 @@ export class RegisterComponent implements OnInit {
      this.profileForm.get('phone').valid &&
      this.profileForm.get('password').valid
      ) {
-       this.isAddress = true;
+       setTimeout(() => {
+         this.isAddress = true;
+       }, 1000);
+      // this.isAddress = true;
      }
   }
 

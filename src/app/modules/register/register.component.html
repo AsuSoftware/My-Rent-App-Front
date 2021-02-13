@@ -4,14 +4,14 @@
   </div>
   <div class="register-form">
     <h3>Be a part of us!</h3>
-    <form [formGroup]="profileForm" (ngSubmit)="onRegister()" *ngIf="!isAddress">
+    <form [formGroup]="profileForm" (ngSubmit)="getAddressForm()" *ngIf="!isAddress">
       <div class="box">
         <div class="input">
-          <input type="text" placeholder="First Name..">
+          <input type="text" placeholder="First Name.." formControlName="firstName">
           <span *ngIf="!profileForm.get('firstName').valid && profileForm.get('firstName').touched">Enter a valid name!</span>
         </div>
         <div class="input">
-          <input type="text" placeholder="Last Name..">
+          <input type="text" placeholder="Last Name.." formControlName="lastName">
           <span *ngIf="!profileForm.get('lastName').valid && profileForm.get('lastName').touched">Enter a valid name!</span>
         </div>
       </div>
@@ -19,40 +19,40 @@
       <span *ngIf="!profileForm.get('email').valid && profileForm.get('email').touched">Enter a valid email!</span>
       <div class="box">
         <div class="input">
-          <input type="date" placeholder="Birthday..">
+          <input type="date" placeholder="Birthday.." formControlName="birthday">
           <span *ngIf="!profileForm.get('birthday').valid && profileForm.get('birthday').touched">Enter a valid birthday!</span>
         </div>
         <div class="input">
-          <input type="text" placeholder="Phone..">
-          <span *ngIf="!profileForm.get('phone').valid && profileForm.get('phone').touched">Enter a valid name!</span>
+          <input type="number" placeholder="Phone.." formControlName="phone">
+          <span *ngIf="!profileForm.get('phone').valid && profileForm.get('phone').touched">Enter a valid phone!</span>
         </div>
       </div>
       <input type="text" placeholder="Password.." formControlName="password">
-      <span *ngIf="!profileForm.get('password').valid && profileForm.get('password').touched">Enter a valid password!</span>
-      <button type="submit" [disabled]="!profileForm.valid">Next</button>
+      <span *ngIf="!profileForm.get('password').valid && profileForm.get('password').touched">Enter a valid password! (min lenght: 8)</span>
+      <button type="submit">Next</button>
     </form>
 
-    <form [formGroup]="profileForm" (ngSubmit)="onRegister()" *ngIf="isAddress">
+    <form [formGroup]="profileForm.get('address')" (ngSubmit)="onRegister()" *ngIf="isAddress">
       <div class="box">
         <div class="input">
-          <input type="text" placeholder="City..">
-          <span *ngIf="!profileForm.get('address').get('city').valid && profileForm.get('address').get('city').touched">Enter a valid city!</span>
+          <input type="text" placeholder="City.." formControlName="city">
+          <span *ngIf="!profileForm.get('address').value.get('city').valid && profileForm.get('address').value.get('city').touched">Enter a valid city!</span>
         </div>
         <div class="input">
-          <input type="text" placeholder="Country..">
-          <span *ngIf="!profileForm.get('address').get('country').valid && profileForm.get('address').get('country').touched">Enter a valid country!</span>
+          <input type="text" placeholder="Country.." formControlName="coutry">
+          <span *ngIf="!profileForm.get('address').value.get('country').valid && profileForm.get('address').get('country').touched">Enter a valid country!</span>
         </div>
       </div>
-      <input type="text" placeholder="Street..">
-      <span *ngIf="!profileForm.get('address').get('street').valid && profileForm.get('address').get('street').touched">Enter a valid street!</span>
+      <input type="text" placeholder="Street.." formControlName="street">
+      <span *ngIf="!profileForm.get('address').value.get('street').valid && profileForm.get('address').value.get('street').touched">Enter a valid street!</span>
       <div class="box">
         <div class="input">
-          <input type="number" placeholder="Zip..">
-          <span *ngIf="!profileForm.get('address').get('zip').valid && profileForm.get('address').get('zip').touched">Enter a valid city!</span>
+          <input type="number" placeholder="Zip.." formControlName="zip">
+          <span *ngIf="!profileForm.get('address').value.get('zip').valid && profileForm.get('address').get('zip').touched">Enter a valid city!</span>
         </div>
         <div class="input">
-          <input type="text" placeholder="Street number..">
-          <span *ngIf="!profileForm.get('address').get('streetNumber').valid && profileForm.get('address').get('streetNumber').touched">Enter a valid country!</span>
+          <input type="text" placeholder="Street number.." formControlName="streetNumber">
+          <span *ngIf="!profileForm.get('address').value.get('streetNumber').valid && profileForm.get('address').get('streetNumber').touched">Enter a valid country!</span>
         </div>
       </div>
       <button type="submit" [disabled]="!profileForm.valid">Sign In</button>

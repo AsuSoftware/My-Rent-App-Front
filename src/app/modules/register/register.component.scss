@@ -59,6 +59,8 @@ $formBackground: #ccd5d8;
           }
 
           .input {
+            display: flex;
+            flex-direction: column;
             input {
               width: 95px;
             }
