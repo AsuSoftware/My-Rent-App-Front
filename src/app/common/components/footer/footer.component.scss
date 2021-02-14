@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+// Font weight
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+
+// Colors
+$blueLight: #f1f3f8;
+$blueMedium: #d6e0f0;
+$blueMediumDark: #8d93ab;
+$blueDark: #393b44;
+$white: #ffff;
+
+$green: #717171;
+
+.container-footer {
+  background: $blueDark;
+  margin-top: 320px;
+  padding: 100px 100px 0 100px;
+  .container-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 130px;
+    align-items: flex-start;
+    .box {
+      display: flex;
+      flex-direction: column;
+      .title {
+        margin-bottom: 10px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $regular;
+        font-size: 16px;
+        color: $white;
+      }
+      a {
+        text-decoration: none;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $regular;
+        font-size: 16px;
+        color: $white;
+      }
+      .container-social {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        a:not(:last-child) {
+          margin-right: 10px;
+        }
+        a {
+          font-size: 25px;
+        }
+      }
+    }
+    .box.text {
+      align-items: flex-start;
+      a {
+        text-decoration: none;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $regular;
+        font-size: 16px;
+        color: $white;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  footer {
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: $regular;
+    font-size: 16px;
+    color: $white;
+  }
+}

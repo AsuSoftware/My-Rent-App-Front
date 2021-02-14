@@ -15,6 +15,7 @@ $blueDark: #393b44;
 $white: #ffff;
 
 $green: #717171;
+$borderColor: #BCBCBC;
 
 $red: #ff0000;
 
@@ -230,6 +231,22 @@ $red: #ff0000;
         font-weight: $medium;
         font-size: 16px;
       }
+      .find-btn {
+        border: 0;
+        background: $blueMediumDark;
+        opacity: 0.8;
+        padding: 15px 20px;
+        border-radius: 7px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+        color: $white;
+        margin-top: 46px;
+        cursor: pointer;
+        i {
+          color: $white;
+        }
+      }
     }
     .image {
       width: 400px;
@@ -276,6 +293,170 @@ $red: #ff0000;
       width: 400px;
       img {
         width: 100%;
+      }
+    }
+  }
+  .choose-us-section {
+    margin-top: 320px;
+    padding: 100px 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid $borderColor;
+    .title {
+      margin-bottom: 46px;
+      font-size: 32px;
+      font-family: "Quicksand", sans-serif;
+      font-weight: $bold;
+      color: $blueDark;
+      margin-bottom: 170px;
+    }
+
+    .container-testimonials {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .box {
+        background: $blueMedium;
+        width: 300px;
+        height: 300px;
+        border-radius: 20px;
+        position: relative;
+        margin: 20px;
+
+        .container-image {
+          width: 50px;
+          position: absolute;
+          left: 40%;
+          bottom: 89%;
+          img {
+            width: 100%;
+            border-radius: 50%;
+          }
+        }
+        .description {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 30px;
+          .name {
+            margin: 15px 0;
+            color: $green;
+            font-family: "Quicksand", sans-serif;
+            font-weight: $regular;
+            font-size: 16px;
+          }
+          i {
+            margin: 15px 0;
+            color: $green;
+          }
+          .information {
+            margin: 15px 0;
+            color: $green;
+            font-family: "Quicksand", sans-serif;
+            font-weight: $regular;
+            font-size: 16px;
+            width: 90%;
+            line-height: 25px;
+          }
+        }
+      }
+    }
+  }
+  .get-app-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 320px;
+    padding: 100px 100px;
+    .description {
+      width: 356px;
+      h2 {
+        margin-bottom: 46px;
+        font-size: 32px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $bold;
+      }
+      p {
+        line-height: 25px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+      }
+      .get-app-btn {
+        border: 0;
+        background: $blueMediumDark;
+        opacity: 0.8;
+        padding: 15px 20px;
+        border-radius: 7px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+        color: $white;
+        margin-top: 46px;
+        cursor: pointer;
+      }
+    }
+    .image {
+      width: 400px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .container-home {
+    .welcome-section {
+      flex-direction: column-reverse;
+      padding: 100px 50px 0 50px;
+      .description {
+        width: 100%;
+        margin-top: 25px;
+        h2 {
+          text-align: center;
+        }
+      }
+      .image {
+        width: 250px;
+      }
+    }
+    .about-us-section {
+      flex-direction: column-reverse;
+      margin-top: 100px;
+      padding: 100px 50px 0 50px;
+      .container-box {
+        flex-direction: column;
+        width: 100%;
+        .box {
+          margin: 10px 0!important;
+          width: 100%;
+        }
+      }
+      .description {
+        width: 100%;
+        margin-bottom: 25px;
+      }
+    }
+    .payment-section {
+      margin-top: 100px;
+      padding: 100px 50px 100px 50px;
+      .title {
+        margin-bottom: 46px;
+      }
+      .container-info {
+        display: flex;
+        flex-direction: column-reverse;
+        .image {
+          width: 100%;
+        }
+        .description {
+          width: 100%;
+          margin-bottom: 25px;
+        }
       }
     }
   }
