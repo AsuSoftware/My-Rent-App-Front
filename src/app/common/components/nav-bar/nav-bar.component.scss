@@ -70,3 +70,115 @@ $red: #ff0000;
     }
   }
 }
+
+.container-nav-mobile {
+  display: none;
+  justify-content: space-between;
+  justify-content: flex-start;
+  padding: 15px 25px;
+  align-items: center;
+  -webkit-box-shadow: 0px 3px 6px 5px rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 3px 6px 5px rgba(0, 0, 0, 0.16);
+
+  .menu-btn {
+    width: 45px;
+  }
+
+  .logo {
+    width: 90px;
+
+    img {
+      width: 100%;
+    }
+  }
+  .container-links {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    background: $blueMediumDark;
+    height: 100%;
+    width: 80%;
+    bottom: 0%;
+    z-index: 2;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+
+    .close-btn {
+      font-size: 25px;
+      color: $white;
+      text-align: end;
+      width: 100%;
+      margin-right: 65px;
+      margin-top: 30px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    a {
+      text-decoration: none;
+      font-family: "Quicksand", sans-serif;
+      font-weight: $medium;
+      font-size: 16px;
+      text-decoration: none;
+      color: $white;
+      margin: 20px 0;
+
+      i {
+        font-size: 20px;
+      }
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 0 40px 0;
+
+      img {
+        width: 70px;
+        border-radius: 50%;
+      }
+
+      p {
+        margin-top: 15px;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $medium;
+        font-size: 16px;
+        color: $white
+      }
+    }
+
+    .signIn {
+      border: 1px solid $red;
+      padding: 13px 25px;
+      border-radius: 10px;
+      color: $green;
+      cursor: pointer;
+    }
+
+    .logIn {
+      background-color: $red;
+      padding: 13px 25px;
+      border-radius: 10px;
+      color: $white;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container-nav {
+    display: none;
+  }
+  .container-nav-mobile {
+    display: flex;
+  }
+}

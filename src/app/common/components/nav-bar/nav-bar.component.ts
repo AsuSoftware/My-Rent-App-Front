@@ -8,10 +8,10 @@ import { Component, OnInit } from '@angular/core';
   animations: [
     trigger('openClose', [
       state('open', style({
-        width: '60%',
+        left: '0%',
       })),
       state('closed', style({
-        width: '0%',
+        left: '-100%',
       })),
       transition('open => closed', [
         animate('0.5s')
@@ -25,6 +25,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
   private isNavOpen = false;
+  private isUserLogged = true;
 
   public constructor() { }
 
@@ -41,6 +42,15 @@ export class NavBarComponent implements OnInit {
 
   public get isNavOpened(): boolean {
     return this.isNavOpen;
+  }
+
+  public get isTheUserLogged(): boolean {
+    return this.isUserLogged;
+  }
+
+  public logout(): void {
+    // delete from local storage the token
+    // route to home
   }
 
 }

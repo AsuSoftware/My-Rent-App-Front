@@ -2,31 +2,33 @@
   <div class="logo">
     <img src="./assets/img/logo.png" alt="logo my rent app">
   </div>
-  <!--
-  <ul class="links">
-    <li><a routerLink="/" routerLinkActive="active"><i class="fas fa-home"></i></a></li>
-    <li><a routerLink="/vehicles" routerLinkActive="active"><i class="fas fa-car-building"></i></a></li>
-    <li><a routerLink="/postRent" routerLinkActive="active"><i class="fas fa-garage-car"></i></a></li>
-    <li><a routerLink="/messages" routerLinkActive="active"><i class="fas fa-comment"></i></a></li>
-    <li><a routerLink="/notification" routerLinkActive="active"><i class="fas fa-bell"></i></a></li>
-  </ul> -->
   <ul class="container-user-action">
     <li><a class="signIn" routerLink="/">Sign In</a></li>
     <li><a class="logIn" routerLink="/">Log In</a></li>
   </ul>
-
-  <!--
-  <div class="container-links-mobile" [@openClose]="isNavOpened ? 'open' : 'closed'">
-    <i class="fas fa-times close" (click)="onNavClose()"></i>
-    <h3>Welcome</h3>
-    <ul class="links-mobile">
-      <li><a class="link" routerLink="/" routerLinkActive="active"><i class="fas fa-home"></i></a></li>
-      <li><a class="link" routerLink="/vehicles" routerLinkActive="active"><i class="fas fa-car-building"></i></a></li>
-      <li><a class="link" routerLink="/postRent" routerLinkActive="active"><i class="fas fa-garage-car"></i></a></li>
-      <li><a class="link" routerLink="/messages" routerLinkActive="active"><i class="fas fa-comment"></i></a></li>
-      <li><a class="link" routerLink="/notification" routerLinkActive="active"><i class="fas fa-bell"></i></a></li>
-      <li><a class="signIn" routerLink="/">Sign In</a></li>
-      <li><a class="logIn" routerLink="/">Log In</a></li>
-    </ul>
-  </div> -->
+</div>
+<div class="container-nav-mobile">
+  <img class="menu-btn" src="./assets/img/icons/menu-icon.png" alt="menu button" (click)="onNavOpen()">
+  <div class="logo">
+    <img src="./assets/img/logo.png" alt="logo my rent app">
+  </div>
+  <div class="container-links" [@openClose]="isNavOpened ? 'open' : 'closed'">
+      <i class="fas fa-times close-btn" (click)="onNavClose()"></i>
+      <div class="user-info">
+        <img src="./assets/img/girl2-image.jpg" alt="user image">
+        <p>Jane Jackson</p>
+      </div>
+      <ul class="links">
+        <a routerLink="/rent" routerLinkActive="active"><i class="fas fa-car-building"></i> Rent</a>
+        <a routerLink="/rent-my-vehicle" routerLinkActive="active"><i class="fas fa-garage-car"></i> Rent my vehicle</a>
+        <a routerLink="/messages" routerLinkActive="active"><i class="far fa-comment"></i> Messages</a>
+        <a routerLink="/profile:id" routerLinkActive="active"><i class="fas fa-user-circle"></i> Profile</a>
+        <a class="settings" routerLink="/settings" routerLinkActive="active"><i class="far fa-cog"></i> Settings</a>
+        <a class="logout" (click)="logout()"><i class="fas fa-door-open"></i> Logout</a>
+      </ul>
+      <div class="user-action" *ngIf="!isTheUserLogged">
+        <li><a class="signIn" routerLink="/">Sign In</a></li>
+        <li><a class="logIn" routerLink="/">Log In</a></li>
+      </div>
+  </div>
 </div>
