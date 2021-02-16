@@ -49,6 +49,7 @@ export class RegisterComponent implements OnInit {
   public onRegister(): void {
     if(this.profileForm.valid) {
       // send to the server
+      console.log("a intrat ", this.profileForm.value);
     }
   }
 

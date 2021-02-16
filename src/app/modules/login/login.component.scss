@@ -7,13 +7,17 @@ $medium: 500;
 $semiBold: 600;
 $bold: 700;
 
-$font-color: #5a5b6f;
 
-// Background colors
-$background: #426e6e;
-$greenDark: #184d47;
-$green: #b7b7b7;
-$formBackground: #ccd5d8;
+// Colors
+$blueLight: #f1f3f8;
+$blueMedium: #d6e0f0;
+$blueMediumDark: #8d93ab;
+$blueDark: #393b44;
+$white: #ffff;
+
+$green: #717171;
+
+$red: #ff0000;
 
 .container-login {
   display: flex;
@@ -26,7 +30,7 @@ $formBackground: #ccd5d8;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: $formBackground;
+    background: $blueMediumDark;
     width: 350px;
     height: 350px;
     border-radius: 15px;
@@ -34,7 +38,7 @@ $formBackground: #ccd5d8;
 
     h3 {
       margin: 20px 0;
-      color: $font-color;
+      color: $blueDark;
       font-size: 25px;
       font-family: "Quicksand", sans-serif;
       font-weight: $bold;
@@ -50,13 +54,24 @@ $formBackground: #ccd5d8;
         margin: 20px 0;
         padding: 10px 20px;
         border-radius: 5px;
-        color: $font-color;
+        color: $blueDark;
         font-family: "Quicksand", sans-serif;
         font-weight: $regular;
         border: 1px solid transparent;
       }
+      .container-link {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        a {
+          text-decoration: none;
+          font-family: "Quicksand", sans-serif;
+          font-weight: $regular;
+          color: $blueDark;
+        }
+      }
       button {
-        background-color: $background;
+        background-color: $blueDark;
         color: #ffff;
         border: 0;
         padding: 10px 20px;
@@ -68,7 +83,7 @@ $formBackground: #ccd5d8;
         border-color: red;
       }
       span {
-        color: black;
+        color: $blueDark;
         font-family: "Quicksand", sans-serif;
         font-weight: $regular;
       }

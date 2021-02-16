@@ -26,6 +26,7 @@ export class NavBarComponent implements OnInit {
 
   private isNavOpen = false;
   private isUserLogged = true;
+  private isOptionOpened = false;
 
   public constructor() { }
 
@@ -40,12 +41,20 @@ export class NavBarComponent implements OnInit {
     this.isNavOpen = false;
   }
 
+  public onChangeOptionState(): void {
+    this.isOptionOpened = !this.isOptionOpened;
+  }
+
   public get isNavOpened(): boolean {
     return this.isNavOpen;
   }
 
   public get isTheUserLogged(): boolean {
     return this.isUserLogged;
+  }
+
+  public get isOptionsOpened(): boolean {
+    return this.isOptionOpened;
   }
 
   public logout(): void {

@@ -1,6 +1,6 @@
 <section class="container-register">
   <div class="image">
-    <img src="./assets/img/mercedes.png" alt="mercedes">
+    <img src="./assets/img/registration-image.png" alt="registration image">
   </div>
   <div class="register-form">
     <h3>Be a part of us!</h3>
@@ -32,11 +32,11 @@
       <button type="submit">Next</button>
     </form>
 
-    <form [formGroup]="profileForm.get('address')" (ngSubmit)="onRegister()" *ngIf="isAddress">
+    <form formGroupName="address" (ngSubmit)="onRegister()" *ngIf="isAddress">
       <div class="box">
         <div class="input">
           <input type="text" placeholder="City.." formControlName="city">
-          <span *ngIf="!profileForm.get('address').value.get('city').valid && profileForm.get('address').value.get('city').touched">Enter a valid city!</span>
+          <span *ngIf="!profileForm.get('address').get('city').valid && profileForm.get('address').value.get('city').touched">Enter a valid city!</span>
         </div>
         <div class="input">
           <input type="text" placeholder="Country.." formControlName="coutry">

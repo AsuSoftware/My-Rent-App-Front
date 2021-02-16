@@ -9,90 +9,141 @@ $bold: 700;
 
 $font-color: #5a5b6f;
 
-// Background colors
-$background: #426e6e;
-$greenDark: #184d47;
-$green: #b7b7b7;
-$formBackground: #ccd5d8;
+// Colors
+$blueLight: #f1f3f8;
+$blueMedium: #d6e0f0;
+$blueMediumDark: #8d93ab;
+$blueDark: #393b44;
+$white: #ffff;
+
+$green: #717171;
+
+$red: #ff0000;
 
 .container-register {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 260px;
-    padding: 0 140px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 260px;
+  padding: 0 140px;
 
-    .image {
-      width: 400px;
-      img {
-        width: 100%;
-      }
+  .image {
+    width: 460px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $blueMediumDark;
+    width: 350px;
+    border-radius: 15px;
+    justify-content: center;
+    -webkit-box-shadow: 0px 3px 6px 5px rgba(0, 0, 0, 0.14);
+    box-shadow: 0px 3px 6px 5px rgba(0, 0, 0, 0.14);
+
+    h3 {
+      margin: 20px 0;
+      color: $blueDark;
+      font-size: 25px;
+      font-family: "Quicksand", sans-serif;
+      font-weight: $bold;
     }
 
-    .register-form {
+    form {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      background: $formBackground;
-      width: 350px;
-      border-radius: 15px;
       justify-content: center;
 
-      h3 {
-        margin: 20px 0;
-        color: $font-color;
-        font-size: 25px;
-        font-family: "Quicksand", sans-serif;
-        font-weight: $bold;
+      .box {
+        display: flex;
+        align-items: center;
+        .input:not(:last-child) {
+          margin-right: 10px;
+        }
+
+        .input {
+          display: flex;
+          flex-direction: column;
+          input {
+            width: 95px;
+          }
+        }
       }
 
+      input {
+        margin: 20px 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        color: $blueDark;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $regular;
+        border: 1px solid transparent;
+      }
+      button {
+        background-color: $blueDark;
+        color: $white;
+        border: 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+
+      input.ng-invalid.ng-touched {
+        border-color: red;
+      }
+      span {
+        color: $blueDark;
+        font-family: "Quicksand", sans-serif;
+        font-weight: $regular;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .container-register {
+    padding: 0 20px;
+
+    .register-form {
+      width: 100%;
       form {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-
+        width: 90%;
+        align-items: center;
         .box {
-          display: flex;
+          flex-direction: column;
           align-items: center;
-          .input:not(:last-child) {
-            margin-right: 10px;
+          input {
+            margin-right: 0;
           }
-
           .input {
-            display: flex;
-            flex-direction: column;
-            input {
-              width: 95px;
-            }
+            margin-right: 0!important;
           }
         }
-
         input {
-          margin: 20px 0;
-          padding: 10px 20px;
-          border-radius: 5px;
-          color: $font-color;
-          font-family: "Quicksand", sans-serif;
-          font-weight: $regular;
-          border: 1px solid transparent;
-        }
-        button {
-          background-color: $background;
-          color: #ffff;
-          border: 0;
-          padding: 10px 20px;
-          border-radius: 5px;
-          margin: 20px 0;
-        }
-
-        input.ng-invalid.ng-touched {
-          border-color: red;
-        }
-        span {
-          color: black;
-          font-family: "Quicksand", sans-serif;
-          font-weight: $regular;
+          width: 95px;
         }
       }
     }
+    .image {
+      width: 300px;
+    }
+  }
+}
+
+
+@media only screen and (max-width: 1060px) {
+  .container-register {
+    flex-direction: column-reverse;
+    margin-top: 100px;
+
+    .image {
+      margin-top: 60px;
+    }
+  }
 }

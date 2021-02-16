@@ -2,33 +2,50 @@
   <div class="logo">
     <img src="./assets/img/logo.png" alt="logo my rent app">
   </div>
-  <ul class="container-user-action">
+  <ul class="container-user-action" *ngIf="!isTheUserLogged">
     <li><a class="signIn" routerLink="/">Sign In</a></li>
     <li><a class="logIn" routerLink="/">Log In</a></li>
   </ul>
+  <ul class="links" *ngIf="isTheUserLogged">
+    <div class="center-links">
+      <a class="link" routerLink="/rent" routerLinkActive="active"><i class="fas fa-car-building"></i></a>
+      <a class="link" routerLink="/rent-my-vehicle" routerLinkActive="active"><i class="fas fa-garage-car"></i></a>
+      <a class="link" routerLink="/messages" routerLinkActive="active"><i class="far fa-comment"></i></a>
+      <a class="link" routerLink="/notifications" routerLinkActive="active"><i class="fas fa-bell"></i> <div class="circle"></div></a>
+    </div>
+    <div class="profile">
+      <a routerLink="/profile:id" routerLinkActive="active"><i class="fas fa-user-circle"></i></a>
+      <i class="fas fa-sort-down" (click)="onChangeOptionState()"></i>
+    </div>
+    <div class="options" *ngIf="isOptionsOpened">
+      <a class="settings" routerLink="/settings" routerLinkActive="active"><i class="far fa-cog"></i> Settings</a>
+      <a class="logout" (click)="logout()"><i class="fas fa-door-open"></i> Logout</a>
+    </div>
+  </ul>
 </div>
 <div class="container-nav-mobile">
-  <img class="menu-btn" src="./assets/img/icons/menu-icon.png" alt="menu button" (click)="onNavOpen()">
+  <img class="menu-btn" src="./assets/img/menu-icon.png" alt="menu button" (click)="onNavOpen()">
   <div class="logo">
     <img src="./assets/img/logo.png" alt="logo my rent app">
   </div>
+  <a id="notification" class="link" routerLink="/notifications" routerLinkActive="active"><i class="fas fa-bell"></i> <div class="circle"></div></a>
   <div class="container-links" [@openClose]="isNavOpened ? 'open' : 'closed'">
-      <i class="fas fa-times close-btn" (click)="onNavClose()"></i>
-      <div class="user-info">
-        <img src="./assets/img/girl2-image.jpg" alt="user image">
-        <p>Jane Jackson</p>
-      </div>
-      <ul class="links">
-        <a routerLink="/rent" routerLinkActive="active"><i class="fas fa-car-building"></i> Rent</a>
-        <a routerLink="/rent-my-vehicle" routerLinkActive="active"><i class="fas fa-garage-car"></i> Rent my vehicle</a>
-        <a routerLink="/messages" routerLinkActive="active"><i class="far fa-comment"></i> Messages</a>
-        <a routerLink="/profile:id" routerLinkActive="active"><i class="fas fa-user-circle"></i> Profile</a>
-        <a class="settings" routerLink="/settings" routerLinkActive="active"><i class="far fa-cog"></i> Settings</a>
-        <a class="logout" (click)="logout()"><i class="fas fa-door-open"></i> Logout</a>
-      </ul>
-      <div class="user-action" *ngIf="!isTheUserLogged">
-        <li><a class="signIn" routerLink="/">Sign In</a></li>
-        <li><a class="logIn" routerLink="/">Log In</a></li>
-      </div>
+    <i class="fas fa-times close-btn" (click)="onNavClose()"></i>
+    <div class="user-info">
+      <img src="./assets/img/girl2-image.jpg" alt="user image">
+      <p>Jane Jackson</p>
+    </div>
+    <ul class="links" *ngIf="isTheUserLogged">
+      <a routerLink="/rent" routerLinkActive="active"><i class="fas fa-car-building"></i> Rent</a>
+      <a routerLink="/rent-my-vehicle" routerLinkActive="active"><i class="fas fa-garage-car"></i> Rent my vehicle</a>
+      <a routerLink="/messages" routerLinkActive="active"><i class="far fa-comment"></i> Messages</a>
+      <a routerLink="/profile:id" routerLinkActive="active"><i class="fas fa-user-circle"></i> Profile</a>
+      <a class="settings" routerLink="/settings" routerLinkActive="active"><i class="far fa-cog"></i> Settings</a>
+      <a class="logout" (click)="logout()"><i class="fas fa-door-open"></i> Logout</a>
+    </ul>
+    <div class="user-action" *ngIf="!isTheUserLogged">
+      <a class="signIn" routerLink="/">Sign In</a>
+      <a class="logIn" routerLink="/">Log In</a>
+    </div>
   </div>
 </div>

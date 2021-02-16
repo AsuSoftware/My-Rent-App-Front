@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 $backgroundColor: #F1F3F8;
+$blueDark: #393b44;
 
 * {
   margin: 0;
@@ -27,6 +28,6 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1d5f57;
+  background: $blueDark;
   border-radius: 10px;
 }
